@@ -2,7 +2,8 @@ import { Navbar, NavbarLink } from "flowbite-react"
 
 const Header = () => {
     return (
-        <nav class="bg-gray-800 text-white">
+      <div className="sticky top-0 left-0">
+      <nav class="bg-gray-800 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex items-center">
@@ -26,6 +27,7 @@ const Header = () => {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
           </button>
+          
         </div>
       </div>
     </div>
@@ -38,6 +40,7 @@ const Header = () => {
       <a href="#contact" class="block px-4 py-2 hover:bg-gray-600">Contact</a>
     </div>
   </nav>
+  </div>
     )
 }
 

@@ -1,10 +1,15 @@
 import React from "react";
 import pp from "../assets/pp.jpg"
 import { Card } from "flowbite-react";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Profile = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000});
+  }, []);
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-200 to-gray-400 flex items-center justify-center">
+    <div id="profile" className="min-h-screen bg-gradient-to-r from-gray-200 to-gray-400 flex items-center justify-center" data-aos="fade-right">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 p-6">
         {/* Left Section */}
         <div className="text-left">
@@ -20,7 +25,7 @@ const Profile = () => {
         </div>
 
         {/* Right Section */}
-        <div className="relative">
+        <div>
           <div className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-xl">
             <img
               src={pp}
