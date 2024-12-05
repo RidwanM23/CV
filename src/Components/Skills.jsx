@@ -1,60 +1,38 @@
 import React from 'react';
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import Aos from 'aos';
 
 const Skills = () => {
+  useEffect(() => {
+    Aos.init({ duration: 2000});
+  }, []);
+  
+  const skills = [
+    { name: 'JavaScript', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+    { name: 'React', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name: 'Tailwind CSS', img: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAPFBMVEX////G6fxsyvk/v/g4vfhhyPmz4vuK1PoAtfckufgvu/hTxPn6/f+h2/tGwPjS7v255fxMwviT1/qn3vsZjXhWAAAAbElEQVR4AeWOCQqAMAwEq11r06b3//9qAwiI0QfowHINC2N+yLJabE53uycgUGTtF11CmDqLLVdZ57iJhSt9V+4cCQB5a1RGJgr9FrrW866GbmpoGylISlNC3RxnsbY+hLbX0GSJIKE6zOajHN4ZA8/fNs9XAAAAAElFTkSuQmCC' },
+    { name: 'Node.js', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { name: 'Laravel', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEpZ8-IOtzlfXVDWcadW_cOjSGX9MKTFYibg&s' },
+    { name: 'MySql', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { name: 'Css', img: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+  ];
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-gray-200 to-gray-400">
-
-      {/* Kontainer Icon */}
-        {/* Kolom Kiri */}
-        <div className="flex flex-col items-start space-y-4 float-left grid grid-cols-2 gap-8">
-          <img
-            src="public/img/php.png"
-            alt="PHP"
-            className="w-12 h-12"
-          />
-          <img
-            src="path_to_mysql_icon.png"
-            alt="MySQL"
-            className="w-12 h-12"
-          />
-          <img
-            src="path_to_laravel_icon.png"
-            alt="Laravel"
-            className="w-12 h-12"
-          />
-          <img
-            src="path_to_tailwind_icon.png"
-            alt="Tailwind"
-            className="w-12 h-12"
-          />
-        </div>
-
-            <h1 className="text-4xl font-semibold text-gray-800 mb-8">Skills</h1>
-        {/* Kolom Kanan */}
-        <div className="flex flex-col items-end space-y-4 float-right">
-          <img
-            src="public/img/html.png"
-            alt="HTML"
-            className="w-12 h-12"
-          />
-          <img
-            src="pulic/img/css.png"
-            alt="CSS"
-            className="w-12 h-12"
-          />
-          <img
-            src="public/img/javascript.png"
-            alt="JavaScript"
-            className="w-12 h-12"
-          />
-          <img
-            src="public/img/"
-            alt="Bootstrap"
-            className="w-12 h-12"
-          />
+    <section id="skills" className="py-20 bg-gradient-to-r from-gray-200 to-gray-400" data-aos="fade-up"
+    data-aos-anchor-placement="top-bottom">
+      <div className="container mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center mb-6">Skills</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          {skills.map((skill) => (
+            <div key={skill.name} className="p-4 bg-white rounded shadow-md">
+              <img src={skill.img} alt={skill.name} className="w-20 h-20 mx-auto mb-4" />
+              <h3 className="font-bold">{skill.name}</h3>
+            </div>
+          ))}
         </div>
       </div>
-
+    </section>
   );
 };
 

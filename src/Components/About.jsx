@@ -1,3 +1,4 @@
+import Aos from "aos";
 import pp from "../assets/pp.jpg"
 import "aos/dist/aos.css";
 import { useEffect } from "react";
@@ -5,7 +6,7 @@ import { useEffect } from "react";
 
 const About = () => {
   useEffect(() => {
-    AOS.init({ duration: 2000});
+    Aos.init({ duration: 2000});
   }, []);
   return (
     <section id="about" className="bg-gradient-to-r from-gray-200 to-gray-400 py-10 px-6">
